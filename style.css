@@ -40,11 +40,14 @@ body{
 
     display: grid;
     grid-template-rows: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 1fr;
     
 }
 
 .title{
     grid-row: 1 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
     background-color: black;
     font-size: 200%;
     color: white;
@@ -55,12 +58,15 @@ body{
 
 .info{
     grid-row: 2 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
     padding: 12px;
     font-size: 175%;
 }
 
 .status{
     grid-row: 3 4;
+    grid-column: 1 2;
     background-color: black;
     color: white;
     font-size: 200%;
@@ -86,4 +92,14 @@ body{
     border-width: 0px;
     width: 10vh;
     height: 10vh;
+}
+
+.rmv{
+    grid-column: 2 3;
+    background-color: #e5e5e5;
+    color: black;
+    font-size: 200%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

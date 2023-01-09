@@ -46,12 +46,15 @@ function displayLib() {
         var titl = document.createElement('div');
         var inf = document.createElement('div');
         var stat = document.createElement('button');
+        var rmv = document.createElement('button');
         titl.classList.add("title");
         inf.classList.add("info");
         stat.classList.add("status");
+        rmv.classList.add("rmv");
         crd.classList.add("card");
         titl.textContent = camelCase(myLibrary[i].title);
         inf.textContent = camelCase(myLibrary[i].title) +" by "+camelCase(myLibrary[i].author)+", "+myLibrary[i].pageno+" pages.";
+        rmv.textContent = "REMOVE";
         if(myLibrary[i].status == true){
             stat.textContent="READ";
         }
@@ -61,6 +64,7 @@ function displayLib() {
         crd.appendChild(titl);
         crd.appendChild(inf);
         crd.appendChild(stat);
+        crd.appendChild(rmv);
         stg.appendChild(crd);
         stat.addEventListener("click", function(){
             if(stat.textContent == "NOT READ"){
@@ -69,6 +73,9 @@ function displayLib() {
             else{
                 stat.textContent="NOT READ";
             }
+        });
+        rmv.addEventListener("click", function(){
+            crd.remove();
         });
         i++;
     //}
